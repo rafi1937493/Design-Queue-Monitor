@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif; width: 220px; padding: 14px 16px;
+    margin: 0; background: #1c1c1e; color: #fff;
+  }
+  .header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #555; transition: background .2s; }
+  .dot.on { background: #34c759; }
+  .title { font-weight: 600; font-size: 13px; }
+  .row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .label { font-size: 12px; color: #b0b0b3; }
+  .switch { position: relative; width: 40px; height: 22px; }
+  .switch input { display: none; }
+  .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; border-radius: 999px; transition: .2s; }
+  .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 2px; bottom: 2px; background-color: white; border-radius: 50%; transition: .2s; }
+  input:checked + .slider { background-color: #34c759; }
+  input:checked + .slider:before { transform: translateX(18px); }
+  #checkNow {
+    width: 100%; padding: 6px 0; cursor: pointer; border: none; border-radius: 6px;
+    background: #333; color: #fff; font-size: 12px; margin-top: 4px;
+  }
+  #checkNow:hover { background: #444; }
+  #shortcuts { font-size: 11px; color: #777; margin-top: 10px; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <span class="dot" id="dot"></span>
+    <span class="title">Queue Monitor</span>
+  </div>
+  <div class="row">
+    <span class="label">Enabled</span>
+    <label class="switch">
+      <input type="checkbox" id="toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+  <button id="checkNow">Check Now</button>
+  <div id="shortcuts">
+    Ctrl+Left: check now<br>
+    Ctrl+Right: toggle on/off<br>
+    Ctrl+Shift+Up: open this panel
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

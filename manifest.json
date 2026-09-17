@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Imprint Queue Monitor",
+  "version": "1.0",
+  "description": "Check Design Queue order counts on demand with keyboard shortcuts",
+  "permissions": ["notifications", "storage"],
+  "host_permissions": ["https://nberm.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "check-queue": {
+      "suggested_key": { "default": "Ctrl+Left" },
+      "description": "Check Design Queue order counts now"
+    },
+    "toggle-enabled": {
+      "suggested_key": { "default": "Ctrl+Right" },
+      "description": "Toggle Queue Monitor on/off"
+    },
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Left" },
+      "description": "Open the Queue Monitor panel"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon (2).png",
+    "48": "icon (2).png",
+    "128": "icon (2).png"
+  }
+}
